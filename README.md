@@ -1,3 +1,8 @@
+
+# kv-abstraction - an easy to use key-value database interface that uses SQL under the hood 
+
+This was created as a personal project that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern.
+
 ## Objects
 
 <dl>
