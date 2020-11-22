@@ -1,7 +1,7 @@
 
 # kv-abstraction - an easy to use key-value database interface that uses SQL under the hood 
 
-This was created as a personal project (created in a hurry) that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern. If you have any suggestions or improvements please send a pull request!
+This was created as a personal project (created in a hurry) that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern. If you have any suggestions or improvements please send a pull request! (quick responses are not guaranteed)
 
 # API Reference 
 #### API Reference can also be found at https://un-index.github.io/kv-abstraction/global.html
