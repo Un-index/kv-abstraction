@@ -79,7 +79,7 @@ saves a value to the specified key (if it's an object then it will be converted 
 **Example**
 ```js
 let kv = require("kv-abstraction");
-let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", "debug");
+let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", false);
 DataStoreObject.Set("key", 10);             // numbers are valid arguments
 DataStoreObject.Set("key", "10");           // strings are valid arguments
 DataStoreObject.Set("key", ["a", 1, "2"]);  // arrays are valid arguments
@@ -103,7 +103,7 @@ retrieves the value associated to the specified key asynchronously
 ```js
 
 let kv = require("kv-abstraction");
-let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", "debug");
+let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", false);
 DataStoreObject.Get("key").then((value) => {
     console.log("value = " + value)
 }, (err) => {
@@ -125,7 +125,7 @@ retrieves the value associated to the specified key synchronously
 **Example**
 ```js
 let kv = require("kv-abstraction");
-let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", "debug");
+let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", false);
 DataStoreObject.Get("key", function(value, err) {
     if (err) {
         console.log("err = "+err)
@@ -142,7 +142,7 @@ ends / kills connection to a database that was initiated by DataStoreObject.GetD
 **Example**
 ```js
 let kv = require("kv-abstraction");
-let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", "debug");
+let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", false);
 DataStoreObject.Destroy();
 ```
 <a name="DataStoreObject"></a>
@@ -171,4 +171,3 @@ callback to be executed once a value is retrieved for a specified key by _intern
 | --- | --- |
 | retrievedValue | <code>string</code> |
 | errorMessage | <code>string</code> |
- 
