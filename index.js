@@ -1,3 +1,5 @@
+
+// turn keys to strings before saving !!!!!
 require("v8-compile-cache");
 const mysql = require("mysql");
 
@@ -129,7 +131,7 @@ let GetDataStore = (
         dbname +
         " (k, vals) " +
         "VALUES " +
-        `("${key}", "${value}") ` +
+        `("${key}", '${value}') ` +
         "ON DUPLICATE KEY UPDATE " +
         "k     = VALUES(k), " +
         "vals = VALUES(vals);",
@@ -247,14 +249,15 @@ let GetDataStore = (
    * DataStoreObject.Destroy();
    */
 
-  Destroy = () => {
+  let Destroy = () => {
     connection.end();
   };
+  _internalDataStoreObject.Destroy= Destroy;
+  Destroy=null;
+
   return new Object(_internalDataStoreObject); // class /  constructor usage?
 };
 
-_internalDataStoreObject.Destroy=Destroy;
-Destroy=null;
 
 obj.GetDataStore = GetDataStore;
 
