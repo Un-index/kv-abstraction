@@ -8,7 +8,7 @@ This was created as a personal project (created in a hurry) that offers no parti
 # API Reference 
 #### API Reference can also be found at https://un-index.github.io/kv-abstraction/global.html
 #### Github: https://github.com/Un-index/kv-abstraction/blob/main/README.md
-## NOTE: contrary to what the documentation might say, saving objects is not fully supported YET - you can only save strings so try to convert your objects into SQL-friendly strings before passing them to DataStoreObject.Set
+
 ## Objects
 
 <dl>
@@ -36,7 +36,7 @@ This was created as a personal project (created in a hurry) that offers no parti
 <a name="obj.GetDataStore"></a>
 
 ### obj.GetDataStore(dataStoreName, [hostname], user, pass, dbName, [portName], debug) ⇒ [<code>DataStoreObject</code>](#DataStoreObject)
-creates and returns a DataStore object with the specified configurations
+creates and returns a DataStore object with the specified configurations, the created connection can be terminated via _internalDataStoreObject.Destroy()
 
 **Kind**: static method of [<code>obj</code>](#obj)
 **Returns**: [<code>DataStoreObject</code>](#DataStoreObject) - DataStoreObject
@@ -65,7 +65,7 @@ creates and returns a DataStore object with the specified configurations
 <a name="_internalDataStoreObject.Set"></a>
 
 ### _internalDataStoreObject.Set(key, value) ⇒ <code>any</code>
-saves a value to the specified key
+saves a value to the specified key (if it's an object then it will be converted to an SQL friendly syntax for you, just pass your object (array, table etc.) to _internalDataStoreObject.Get and it'll take care of the rest )
 
 **Kind**: static method of [<code>\_internalDataStoreObject</code>](#_internalDataStoreObject)
 **Returns**: <code>any</code> - value - returns the specified value back
@@ -73,15 +73,17 @@ saves a value to the specified key
 | Param | Type | Description |
 | --- | --- | --- |
 | key | <code>string</code> | the key to associate a value with |
-| value | <code>string</code> | the value to associate with the specified key; you can supply any valid Javascript object that can be saved (the value has JSON.stringify called on it internally to return a string before saving - the string can have a maximum of 4,000,000 characters) |
+| value | <code>any</code> | the value to associate with the specified key; objects are serialized to strings automatically but in the end the string can have a maximum of 4,000,000 characters before saving 
 
 **Example**
 ```js
 let kv = require("kv-abstraction");
 let DataStoreObject = kv.GetDataStore("dataStoreName", "hostname", "user", "pass", "dbName", "portName", "debug");
-DataStoreObject.Set("key", 10);             // valid
-DataStoreObject.Set("key", "10");           // valid
-DataStoreObject.Set("key", {a:"1", b:"2"}); // valid
+DataStoreObject.Set("key", 10);             // numbers are valid arguments
+DataStoreObject.Set("key", "10");           // strings are valid arguments
+DataStoreObject.Set("key", ["a", 1, "2"]);  // arrays are valid arguments
+DataStoreObject.Set("key", {a:"1", b:"2"}); // dictionaries are valid arguments
+DataStoreObject.Set("key", {a:"1", b:"2", c:[1,2]}); // mixed tables are valid arguments
 
 ```
 <a name="_internalDataStoreObject.GetAsync"></a>
@@ -94,7 +96,7 @@ retrieves the value associated to the specified key asynchronously
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | the key to retrieve a value for - if the retrieved value was JSON Encoded then it will automatically be parsed into a Javascript object for you |
+| key | <code>string</code> | the key to retrieve a value for - if the retrieved value was an object before saving then it will automatically be parsed into a Javascript object for you (all you have to do is call _internalDataStoreObject.GetAsync)
 
 **Example**
 ```js
@@ -116,7 +118,7 @@ retrieves the value associated to the specified key synchronously
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | the key to retrieve a value for - if the retrieved value was JSON Encoded then it will automatically be parsed into a Javascript object for you |
+| key | <code>string</code> | the key to retrieve a value for - if the retrieved value was an object before saving then it will automatically be parsed into a Javascript object for you (all you have to do is call _internalDataStoreObject.Get)
 | callback | [<code>GetCallback</code>](#GetCallback) | the callback to pass the retrieved value to - make sure to handle errors as well using the second parameter |
 
 **Example**
@@ -133,7 +135,7 @@ DataStoreObject.Get("key", function(value, err) {
 <a name="_internalDataStoreObject.Destroy"></a>
 
 ### _internalDataStoreObject.Destroy() ⇒ <code>void</code>
-ends / kills connection to a database
+ends / kills connection to a database that was initiated by DataStoreObject.GetDataStore
 
 **Kind**: static method of [<code>\_internalDataStoreObject</code>](#_internalDataStoreObject)
 **Example**
