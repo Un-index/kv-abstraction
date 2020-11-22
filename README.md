@@ -171,3 +171,4 @@ callback to be executed once a value is retrieved for a specified key by _intern
 | --- | --- |
 | retrievedValue | <code>string</code> |
 | errorMessage | <code>string</code> |
+ 
