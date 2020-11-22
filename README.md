@@ -1,6 +1,6 @@
 
 # kv-abstraction (beta) - an easy to use key-value database interface that uses SQL under the hood 
-![version](https://img.shields.io/badge/version-1.3.0-1-green?style=flat-square)
+![version](https://img.shields.io/badge/version-1.3.0v1-green?style=flat-square)
 ![CC-BY-3.0 licence](https://img.shields.io/badge/licence-CC--BY--3.0-blue.svg?style=flat-square)
 #### Make sure to read the licence's terms before usage
 This was created as a personal project (created in a hurry) that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern. If you have any suggestions or improvements please send a pull request! (quick responses are not guaranteed) 
