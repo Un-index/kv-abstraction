@@ -21,8 +21,8 @@ This was created as a personal project (created in a hurry) that offers no parti
 ## Typedefs
 
 <dl>
-<dt><a href="#_internalDataStoreObject">_internalDataStoreObject</a> : <code>Object</code></dt>
-<dd><p>Note: Detailed documentation exists separately for each method, read that if you want.</p>
+<dt><a href="#DataStoreObject">DataStoreObject</a> : <code>Object</code></dt>
+<dd><p>Note: Detailed documentation exists separately for each method, <a href = "#_internalDataStoreObject"> read that if you want.</a></p>
 </dd>
 <dt><a href="#GetCallback">GetCallback</a> : <code>function</code></dt>
 <dd><p>callback to be executed once a value is retrieved for a specified key by _internalDataStoreObject.Get</p>
