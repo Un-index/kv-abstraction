@@ -6,8 +6,9 @@
 This was created as a personal project (created in a hurry) that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern. If you have any suggestions or improvements please send a pull request! (quick responses are not guaranteed) 
 
 # API Reference 
-#### API Reference can also be found at https://un-index.github.io/kv-abstraction/global.html
-#### Github: https://github.com/Un-index/kv-abstraction/blob/main/README.md
+#### API Reference can also be found at https://un-index.github.io/kv-abstraction/-_internalDataStoreObject.html
+#### npm registry: https://www.npmjs.com/package/@un-index/kv-abstraction 
+#### runkit: https://npm.runkit.com/%40un-index%2Fkv-abstraction
 
 ## Objects
 
