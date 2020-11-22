@@ -21,7 +21,7 @@ This was created as a personal project (created in a hurry) that offers no parti
 ## Typedefs
 
 <dl>
-<dt><a href="#DataStoreObject">DataStoreObject</a> : <code>Object</code></dt>
+<dt><a href="#_internalDataStoreObject">_internalDataStoreObject</a> : <code>Object</code></dt>
 <dd><p>Note: Detailed documentation exists separately for each method, read that if you want.</p>
 </dd>
 <dt><a href="#GetCallback">GetCallback</a> : <code>function</code></dt>
@@ -36,10 +36,10 @@ This was created as a personal project (created in a hurry) that offers no parti
 <a name="obj.GetDataStore"></a>
 
 ### obj.GetDataStore(dataStoreName, [hostname], user, pass, dbName, [portName], debug) ⇒ [<code>DataStoreObject</code>](#DataStoreObject)
-creates and returns a DataStore object with the specified configurations, the created connection can be terminated via _internalDataStoreObject.Destroy()
+creates and returns a _internalDataStoreObject object with the specified configurations, the created connection can be terminated via _internalDataStoreObject.Destroy()
 
 **Kind**: static method of [<code>obj</code>](#obj)
-**Returns**: [<code>DataStoreObject</code>](#DataStoreObject) - DataStoreObject
+**Returns**: [<code>_internalDataStoreObject</code>](#_internalDataStoreObject) - internal DataStoreObject
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
