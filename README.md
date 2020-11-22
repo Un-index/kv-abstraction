@@ -8,7 +8,7 @@ This was created as a personal project (created in a hurry) that offers no parti
 # API Reference 
 #### API Reference can also be found at https://un-index.github.io/kv-abstraction/global.html
 #### Github: https://github.com/Un-index/kv-abstraction/blob/main/README.md
-## NOTE: contrary to what the documentation might say, saving objects is not fully supported - you can only save strings so try to convert your objects into SQL-friendly strings before passing them to DataStoreObject.Set
+## NOTE: contrary to what the documentation might say, saving objects is not fully supported YET - you can only save strings so try to convert your objects into SQL-friendly strings before passing them to DataStoreObject.Set
 ## Objects
 
 <dl>
