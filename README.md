@@ -1,5 +1,5 @@
 
-# kv-abstraction - an easy to use key-value database interface that uses SQL under the hood 
+# kv-abstraction (beta) - an easy to use key-value database interface that uses SQL under the hood 
 ![version](https://img.shields.io/badge/version-1.2.44-green?style=flat-square)
 ![CC-BY-3.0 licence](https://img.shields.io/badge/licence-CC--BY--3.0-blue.svg?style=flat-square)
 #### Make sure to read the licence's terms before usage
