@@ -1,12 +1,14 @@
 
 # kv-abstraction - an easy to use key-value database interface that uses SQL under the hood 
+![weekly downloads](https://img.shields.io/badge/weekly%20downloads-3k%40approx.-green.svg?style=flat-square)
+![CC-BY-3.0 licence](https://img.shields.io/badge/licence-CC--BY--3.0-blue.svg?style=flat-square)
 #### Make sure to read the licence's terms before usage
-This was created as a personal project (created in a hurry) that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern. If you have any suggestions or improvements please send a pull request! (quick responses are not guaranteed)
+This was created as a personal project (created in a hurry) that offers no particular benefit to usage over existing developed relational database interfaces, although it may prove useful for small projects (may) where speed is not the biggest concern. If you have any suggestions or improvements please send a pull request! (quick responses are not guaranteed) 
 
 # API Reference 
 #### API Reference can also be found at https://un-index.github.io/kv-abstraction/global.html
-#### npm registry: https://www.npmjs.com/package/@un-index/kv-abstraction
-
+#### Github: https://github.com/Un-index/kv-abstraction/blob/main/README.md
+## NOTE: contrary to what the documentation might say, saving objects is not fully supported - you can only save strings so try to convert your objects into SQL-friendly strings before passing them to DataStoreObject.Set
 ## Objects
 
 <dl>
