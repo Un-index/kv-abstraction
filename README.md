@@ -5,6 +5,7 @@ This was created as a personal project (created in a hurry) that offers no parti
 
 # API Reference 
 #### API Reference can also be found at https://un-index.github.io/kv-abstraction/global.html
+#### npm registry: https://www.npmjs.com/package/@un-index/kv-abstraction
 
 ## Objects
 
